@@ -1,0 +1,110 @@
+/* Skills Section Styles */
+.skills-section {
+  background: linear-gradient(145deg, #f2f2f2, #dfe6e9);
+  padding: 3rem 0; /* Reduced padding to move section up */
+  text-align: center;
+  position: relative;
+  top: -30px; /* Added to nudge the section upwards */
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.skills-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #333;
+  animation: fadeIn 1s ease-out;
+}
+
+.skills-category {
+  margin-bottom: 4rem;
+}
+
+.skills-category-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: #00bfae;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.skill-item {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 0 150px; /* Ensures each card takes a minimum width */
+  max-width: 200px; /* Limiting the max width of each card */
+}
+
+.skill-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-icon {
+  font-size: 3rem;
+  color: #00bfae;
+  transition: color 0.3s ease;
+}
+
+.skill-item:hover .skill-icon {
+  color: #008e7d;
+}
+
+.skill-name {
+  font-size: 1.1rem;
+  color: #333;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+/* Mobile View Adjustments */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 4rem 0 3rem 0; /* Add more padding at the top to avoid overlap */
+    top: 0; /* Reset the top offset */
+  }
+
+  .skills-title {
+    font-size: 2.5rem;
+  }
+
+  .skill-item {
+    padding: 1.5rem;
+    flex: 1 0 120px; /* Adjust for smaller screen sizes */
+    max-width: 180px;
+  }
+
+  .skills-category-title {
+    font-size: 1.8rem; /* Reduce the font size for smaller screens */
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

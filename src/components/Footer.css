@@ -1,0 +1,74 @@
+/* Footer Styles */
+.footer {
+  background: linear-gradient(145deg, #212525d6, #0d0c0ceb);
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  z-index: 10;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  margin-top: auto; /* Ensures footer stays at the bottom */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Footer Text */
+.footer-text {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  color: #f1f1f1;
+}
+
+.social-icon:active {
+  transform: scale(1.1);
+}
+
+/* Mobile Design */
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 1rem; /* Reduced gap between icons */
+  }
+
+  .footer-text {
+    font-size: 1rem; /* Smaller text size on mobile */
+  }
+
+  .social-icon {
+    font-size: 1.5rem; /* Adjust social icon size on mobile */
+  }
+}
+
+/* Ensure footer stays at the bottom of the page even with short content */
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+main {
+  min-height: calc(100vh - 150px); /* Adjusts for footer height */
+}

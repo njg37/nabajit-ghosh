@@ -1,0 +1,194 @@
+/* Section Styling */
+.experience-section {
+    padding: 50px 20px;
+    position: relative;
+    background: linear-gradient(to right, #f9f9f9, #ffffff);
+    overflow: hidden;
+}
+
+.section-title {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(to right, #00bfae, #008e7d); /* Matching theme color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Center Line */
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 6px;
+    background: linear-gradient(to bottom, #00bfae, #008e7d); /* Matching theme color */
+    z-index: -1;
+    transform: translateX(-50%);
+}
+
+/* Timeline Items */
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 30px;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: calc(var(--index) * 0.3s);
+}
+
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.right {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-content {
+    background: linear-gradient(to right, #ffffff, #f9f9f9);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.timeline-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Decorative Dot */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 30px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to right, #00bfae, #008e7d); /* Matching theme color */
+    border-radius: 50%;
+    z-index: 1;
+    border: 5px solid white;
+}
+
+.timeline-item.left::before {
+    right: -10px;
+}
+
+.timeline-item.right::before {
+    left: -10px;
+}
+
+/* Text Styling */
+.timeline-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+    background: linear-gradient(to right, #00bfae, #008e7d); /* Matching theme color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timeline-content h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.timeline-content .duration {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.timeline-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline-content ul li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #555;
+    position: relative;
+    padding-left: 20px;
+}
+
+.timeline-content ul li::before {
+    content: '✔';
+    color: #008e7d; /* Matching theme color */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1rem;
+}
+
+/* Timeline Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .timeline-item {
+        width: 100%;
+        text-align: left;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .timeline-item.left,
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-line {
+        left: 25px;
+    }
+
+    .timeline-item::before {
+        left: -10px;
+    }
+
+    .section-title {
+        font-size: 2.2rem; /* Adjust title size for small screens */
+        margin-bottom: 30px;
+    }
+}
