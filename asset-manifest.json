@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nabajit-ghosh/static/css/main.084da912.css",
-    "main.js": "/nabajit-ghosh/static/js/main.77cef464.js",
+    "main.js": "/nabajit-ghosh/static/js/main.16c88c3d.js",
     "static/js/453.aac68abc.chunk.js": "/nabajit-ghosh/static/js/453.aac68abc.chunk.js",
     "static/media/njg37.jpeg": "/nabajit-ghosh/static/media/njg37.e4b3a472c3a278ccc819.jpeg",
     "static/media/njg.png": "/nabajit-ghosh/static/media/njg.e53ec571d33750462370.png",
@@ -9,11 +9,11 @@
     "static/media/TM.png": "/nabajit-ghosh/static/media/TM.cef068d2fde7db4b15ba.png",
     "index.html": "/nabajit-ghosh/index.html",
     "main.084da912.css.map": "/nabajit-ghosh/static/css/main.084da912.css.map",
-    "main.77cef464.js.map": "/nabajit-ghosh/static/js/main.77cef464.js.map",
+    "main.16c88c3d.js.map": "/nabajit-ghosh/static/js/main.16c88c3d.js.map",
     "453.aac68abc.chunk.js.map": "/nabajit-ghosh/static/js/453.aac68abc.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.084da912.css",
-    "static/js/main.77cef464.js"
+    "static/js/main.16c88c3d.js"
   ]
 }
