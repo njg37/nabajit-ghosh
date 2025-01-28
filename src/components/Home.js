@@ -171,7 +171,7 @@ const Home = () => {
         <div className="about-container">
           {/* Left Side - Profile Image */}
           <div className="about-image">
-            <img src={njg37} alt="Profile" />
+            <img src={njg} alt="Profile" />
           </div>
   
           {/* Right Side - About Content */}

@@ -13,7 +13,7 @@ const Header = () => {
   return (
     <header className="header">
       <nav className="navbar">
-        <NavLink to="/" className="nav-item" title="Home" onClick={scrollToTop}>
+        <NavLink to="/nabajit-ghosh/" className="nav-item" title="Home" onClick={scrollToTop}>
           <i className="fas fa-house-user"></i>
           <span className="nav-tooltip">Home</span>
         </NavLink>
