@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { FaArrowDown } from "react-icons/fa";
 import njg37 from "../images/njg37.jpeg";
 import njg from "../images/njg.png";
+import { FaCertificate } from 'react-icons/fa';
 
 import "./About.css";
 import { FaDownload, FaLinkedin, FaTwitter, FaGithub, FaEnvelope } from "react-icons/fa";
@@ -37,6 +38,7 @@ const experiences = [
       'Conducted thorough testing and prepared documentation for seamless project deployment.',
       'Gained hands-on experience with PHP, MySQL, API integration, and responsive web design.',
     ],
+    certificateLink: 'https://drive.google.com/file/d/1Qtl9eHAnuE6DQQqgli3q0hdabOUhUcro/view?usp=sharing',
   },
   {
     title: 'Web Development Intern',
@@ -48,6 +50,7 @@ const experiences = [
       'Ensured all content was tested and compliant with strict non-copying policies.',
       'Delivered top-tier work with effective team communication.',
     ],
+    certificateLink: 'https://drive.google.com/file/d/1rlD6u3iUD9rDg1RPnONtEpVCv3CJNSuZ/view?usp=sharing',
   },
 ];
 
@@ -210,26 +213,29 @@ const Home = () => {
       </section>
 
 
-      <section className="experience-section" data-aos="fade-up">
-      <h2 className="section-title">My Experience</h2>
-      <div className="timeline">
-        {experiences.map((exp, index) => (
-          <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
-            <div className="timeline-content">
-              <h3>{exp.title}</h3>
-              <h4>{exp.company}</h4>
-              <p className="duration">{exp.duration}</p>
-              <ul>
-                {exp.details.map((detail, i) => (
-                  <li key={i}>{detail}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        ))}
-        <div className="timeline-line"></div>
-      </div>
-    </section>
+         <section className="experience-section" data-aos="fade-up">
+           <h2 className="section-title">My Experience</h2>
+           <div className="timeline">
+             {experiences.map((exp, index) => (
+               <div key={index} className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
+                 <div className="timeline-content">
+                   <h3>{exp.title}</h3>
+                   <h4>{exp.company}</h4>
+                   <p className="duration">{exp.duration}</p>
+                   <ul>
+                     {exp.details.map((detail, i) => (
+                       <li key={i}>{detail}</li>
+                     ))}
+                   </ul>
+                   <a href={exp.certificateLink} className="certificate-button" target="_blank" rel="noopener noreferrer">
+                     <FaCertificate className="certificate-icon" /> View Certificate
+                   </a>
+                 </div>
+               </div>
+             ))}
+             <div className="timeline-line"></div>
+           </div>
+         </section>
 
     <section className="education-section">
       <h2 className="section-title">My Education</h2>
