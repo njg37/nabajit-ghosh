@@ -22,7 +22,7 @@ const About = () => {
           <div className="action-section">
             {/* Download Resume Button */}
             <a
-              href="https://drive.google.com/file/d/1eSvifgJf-CYV74juM9O-l08YFhjLoDXY/view"
+              href="https://drive.google.com/file/d/1EIf1CcoDXylHPBSfc1H_CyHQoZVGQgrb/view?usp=drive_link"
               target="_blank"
               rel="noopener noreferrer"
               className="resume-button"
