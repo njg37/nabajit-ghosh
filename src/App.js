@@ -9,6 +9,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import About from './components/About';
 import Footer from './components/Footer';
+import Certificate from './components/Certificate';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
@@ -36,6 +37,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/skills" element={<Skills />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/certificate" element={<Certificate />} />
           </Routes>
         </main>
         <Footer />

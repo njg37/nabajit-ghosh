@@ -1,0 +1,244 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+}
+
+/* Certificate Section */
+.certificate-section {
+  padding: 80px 30px;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.certificate-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  background-color: #ffffff;
+  opacity: 0.2;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.certificate-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  padding: 30px;
+  background: #b1dbdb;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Title for Certificates */
+.certificate-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #333;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Certificate List */
+.certificate-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 40px;
+}
+
+/* Base Certificate Item Styles */
+.certificate-item {
+  position: relative;
+  display: inline-block;
+  margin: 20px;
+  perspective: 1000px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  padding: 10px;
+}
+
+.certificate-item:hover {
+  box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05);
+}
+
+.certificate-inner {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-in-out;
+}
+
+.certificate-item:hover .certificate-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back Faces */
+.certificate-front,
+.certificate-back {
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.certificate-front {
+  background-color: white;
+}
+
+.certificate-back {
+  background-color: #3c5169;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 10px;
+  text-align: center;
+}
+
+/* Certificate Image */
+.certificate-image {
+  display: block;
+  border-radius: 15px;
+  object-fit: contain; /* Keep aspect ratio and show the whole image */
+}
+
+/* Certificate Name and Description */
+.certificate-name {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 5px 0;
+}
+
+.certificate-description {
+  font-size: 0.7rem;
+  color: #fff;
+  margin: 5px 0;
+  line-height: 1.3;
+}
+
+.verify-button {
+  background-color: #0056b3;
+  padding: 8px 14px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: white;
+  margin-top: 5px;
+  transition: background-color 0.3s;
+}
+
+.verify-button:hover {
+  background-color: #003366;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 80%;
+}
+
+.full-certificate {
+  width: 100%;
+  height: 521px;
+  border-radius: 10px;
+}
+
+.close-button {
+  background: #d9534f;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  margin-top: 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.close-button:hover {
+  background: #c9302c;
+}
+
+/* Cutshort Certificate Card */
+.certificate-item.cutshort-card {
+  width: 259px;
+  height: 200px;
+}
+
+.certificate-item.cutshort-card .certificate-image {
+  width: 100%; /* Image fills the card */
+  height: 100%;
+}
+
+/* Wipro Certificate Card */
+.certificate-item.wipro-card {
+  width: 185px;
+  height: 260px;
+}
+
+.certificate-item.wipro-card .certificate-image {
+  width: 100%;
+  height: 100%;
+}
+
+/* Option to increase the size of the card */
+.certificate-item.enlarged-card {
+  transform: scale(1.2); /* Increase the size by 20% */
+  z-index: 2; /* Ensure it's above other cards */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .certificate-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .certificate-title {
+    font-size: 2rem;
+  }
+
+  .certificate-item {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .certificate-container {
+    padding: 20px; /* Adjust padding for smaller screens */
+  }
+}

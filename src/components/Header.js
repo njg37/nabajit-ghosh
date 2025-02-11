@@ -1,19 +1,24 @@
-import React from 'react';
-import './Header.css';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import "./Header.css";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
   return (
     <header className="header">
       <nav className="navbar">
-        <NavLink to="/nabajit-ghosh/" className="nav-item" title="Home" onClick={scrollToTop}>
+        <NavLink
+          to="/nabajit-ghosh/"
+          className="nav-item"
+          title="Home"
+          onClick={scrollToTop}
+        >
           <i className="fas fa-house-user"></i>
           <span className="nav-tooltip">Home</span>
         </NavLink>
@@ -36,6 +41,10 @@ const Header = () => {
         <NavLink to="/skills" className="nav-item" title="Skills">
           <i className="fas fa-brain"></i>
           <span className="nav-tooltip">Skills</span>
+        </NavLink>
+        <NavLink to="/certificate" className="nav-item" title="Certificates">
+          <i className="fas fa-certificate"></i>
+          <span className="nav-tooltip">Certificates</span>
         </NavLink>
         <NavLink to="/contact" className="nav-item" title="Contact">
           <i className="fas fa-envelope-open-text"></i>
