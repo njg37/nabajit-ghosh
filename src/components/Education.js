@@ -8,6 +8,7 @@ const educationDetails = [
     institution: 'Bengal College of Engineering and Technology, MAKAUT University',
     field: 'Computer Science and Engineering',
     duration: '2021-2025',
+    score: 'CGPA: 8.19 (till 7th Semester)',
     icon: <FaGraduationCap />,
   },
   {
@@ -15,6 +16,7 @@ const educationDetails = [
     institution: 'Kamalpur Class XII School, TBSE, Tripura',
     field: 'Science Stream',
     duration: '2020-2021',
+    score: 'Percentage: 85.8%',
     icon: <FaSchool />,
   },
   {
@@ -22,6 +24,7 @@ const educationDetails = [
     institution: 'Kamalpur Madrassa Class XII School, TBSE, Tripura',
     field: 'General Study',
     duration: '2018-2019',
+    score: 'Percentage: 81.2%',
     icon: <FaSchool />,
   },
 ];
@@ -39,6 +42,7 @@ const Education = () => {
               <h4>{edu.institution}</h4>
               <p className="field">{edu.field}</p>
               <p className="duration">{edu.duration}</p>
+              <p className="score">{edu.score}</p>
             </div>
           </div>
         ))}

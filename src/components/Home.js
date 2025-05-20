@@ -26,7 +26,7 @@ const Home = () => {
           {/* Right Side - Content */}
           <div className="home-content">
             <h1 className="home-title">Hi, I'm Nabajit Ghosh</h1>
-            <p className="home-description">I am a MERN Stack Developer.</p>
+            <p className="home-description">I am a Software Developer.</p>
             {/* Modify Link to use ScrollLink from react-scroll */}
             <ScrollLink 
               to="about" // The target section ID

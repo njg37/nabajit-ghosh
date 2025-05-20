@@ -1,12 +1,12 @@
 import React from "react";
 import "./Footer.css";
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-content">
-        <p className="footer-text">© 2024 Nabajit Ghosh. All Rights Reserved.</p>
+        <p className="footer-text">© 2025 Nabajit Ghosh. All Rights Reserved.</p>
         <div className="social-icons">
           <a
             href="https://linkedin.com/in/nabajit-ghosh"

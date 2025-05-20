@@ -1,22 +1,62 @@
-.projects-section {
-  background: linear-gradient(135deg, #eae8ff, #f5f5ff);
-  padding: 4rem 2rem;
-  margin-top: -2rem;
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+/* Apply styles only within the projects section */
+.projects-section * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
 
+.projects-section {
+  background: linear-gradient(135deg, #eae8ff, #f5f5ff);
+  overflow-x: hidden;
+}
+
+
+/* Parallax Effect for Background */
+.projects-section {
+  position: relative;
+  padding: 5rem 2rem;
+  margin-top: -2rem;
+  background: linear-gradient(135deg, #eae8ff, #f5f5ff);
+  perspective: 1000px;
+}
+
+/* Parallax Background */
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: -1;
+  transform: translateY(0);
+  animation: parallaxScroll 10s infinite linear;
+}
+
+@keyframes parallaxScroll {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+
+/* Title with Hover Effects */
 .projects-title {
   text-align: center;
   font-size: 3rem;
   margin-bottom: 3rem;
   color: #5346c9;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
   transition: transform 0.3s ease, color 0.3s ease;
+  position: relative;
 }
 
 .projects-title:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
+  transform: scale(1.05);
   color: #9370db;
 }
 
@@ -32,86 +72,126 @@
 }
 
 .projects-title:hover::after {
-  width: 100px; /* Increase width on hover */
+  width: 100px;
 }
 
+/* Masonry Grid Layout */
 .projects-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2.5rem;
-  justify-content: center;
-  transition: transform 0.3s ease;
+  column-count: 3;
+  column-gap: 2rem;
+  padding: 0 2rem;
 }
 
 .project-card {
   background: linear-gradient(135deg, #ffffff, #f3f2ff);
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  margin-bottom: 2rem;
+  display: inline-block;
+  width: 100%;
+  break-inside: avoid;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-origin: center;
+  padding: 2rem;
 }
 
+.project-tech-stack {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tech-badge {
+  background-color: #f3f3f3;
+  color: #333;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  transition: color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tech-badge:hover {
+  color: #fff;
+  cursor: default;
+  background: linear-gradient(270deg, #5346c9, #9370db, #5346c9);
+  background-size: 600% 600%;
+  animation: flowGradient 3s ease infinite;
+}
+
+/* Keyframes for water flow shimmer */
+@keyframes flowGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+
+/* Tilt Animation */
 .project-card:hover {
-  transform: translateY(-8px);
+  transform: rotate3d(1, 1, 0, 10deg) scale(1.05);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
 }
 
+/* Image Styling */
 .project-image {
-  background: #eae8ff;
-  padding: 1.5rem;
   text-align: center;
-  position: relative;
-  transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.03); /* Slight zoom effect on hover */
-  background-color: #f3f2ff; /* Change background color on hover */
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
 }
 
 .project-image img {
-  width: 90%;
+  width: 100%;
   max-width: 300px;
   border-radius: 12px;
   transition: transform 0.3s ease;
 }
 
 .project-card:hover .project-image img {
-  transform: scale(1.05); /* Zoom effect on image hover */
+  transform: scale(1.05);
 }
 
+/* Project Info */
 .project-info {
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 1rem;
-  transition: padding 0.3s ease;
+  padding: 2rem 1.5rem;
 }
 
 .project-name {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #333333;
+  color: #333;
   transition: color 0.3s ease;
+  margin-bottom: 1rem;
 }
 
 .project-card:hover .project-name {
-  color: #5346c9; /* Change color on hover */
+  color: #5346c9;
 }
 
+/* Project Description */
 .project-description {
+  color: #555;
   list-style: none;
-  padding: 0;
-  color: #555555;
+  margin-bottom: 1.5rem;
 }
 
 .project-description li {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-description li::before {
@@ -120,20 +200,22 @@
   font-size: 1.2rem;
 }
 
+/* Buttons */
 .project-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .project-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.7rem 1.2rem;
+  padding: 0.9rem 1.5rem;
   background: linear-gradient(135deg, #5346c9, #9370db);
-  color: #ffffff;
+  color: white;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.84rem;
   font-weight: 600;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.3s ease;
@@ -141,7 +223,7 @@
 
 .project-link:hover {
   background: linear-gradient(135deg, #9370db, #5346c9);
-  transform: scale(1.05); /* Scale up effect on hover */
+  transform: scale(1.05);
 }
 
 .project-link svg {
@@ -149,6 +231,7 @@
   height: 1.2rem;
 }
 
+/* View More */
 .view-more-container {
   text-align: center;
   margin-top: 3rem;
@@ -158,7 +241,7 @@
   display: inline-block;
   padding: 1rem 2.5rem;
   font-size: 1.2rem;
-  color: #ffffff;
+  color: white;
   background: linear-gradient(135deg, #5346c9, #9370db);
   border-radius: 12px;
   text-decoration: none;
@@ -168,41 +251,127 @@
 
 .view-more-link:hover {
   background: linear-gradient(135deg, #9370db, #5346c9);
-  transform: translateY(-4px); /* Slight upward movement on hover */
+  transform: translateY(-4px);
 }
 
-/* Mobile Adjustments */
-@media (max-width: 768px) {
-  .projects-section {
-    padding: 3rem 1rem; /* Adjust padding on smaller screens */
-    margin-top: 0; /* Reset negative margin */
+
+
+.projects-disclaimer {
+  color: transparent;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 10px 0 20px 0;
+  height: 1.5em;
+}
+
+.projects-disclaimer::before {
+  content: attr(data-text);
+  position: absolute;
+  white-space: nowrap;
+  color: #d9534f;
+  font-weight: 600;
+  font-size: 1rem;
+  top: 0;
+  left: 100%;
+  animation: marquee 22s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  90% {
+    transform: translateX(calc(-100% - 100vw));
+  }
+  100% {
+    transform: translateX(calc(-100% - 100vw));
+  }
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .projects-container {
+    column-count: 2;
   }
 
   .projects-title {
-    font-size: 2.2rem; /* Adjust title font size */
+    font-size: 2.5rem;
+  }
+
+  .project-card {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-section {
+    padding: 3rem 1rem;
+    margin-top: 0;
+  }
+
+  .projects-title {
+    font-size: 2.2rem;
     margin-bottom: 2rem;
   }
 
   .projects-container {
-    grid-template-columns: 1fr; /* Stack the project cards on smaller screens */
+    column-count: 1;
+    padding: 0 1rem;
   }
 
   .project-card {
-    flex-direction: column;
-    margin: 0 auto;
-  }
-
-  .project-image img {
     width: 100%;
-    max-width: 250px; /* Ensure image scales properly */
+    padding: 1.5rem;
   }
 
-  .project-info {
-    padding: 1.5rem;
+  .project-name {
+    font-size: 1.6rem;
+  }
+
+  .project-description {
+    font-size: 0.95rem;
+  }
+
+  .project-link {
+    font-size: 0.8rem;
+    padding: 0.8rem 1.2rem;
   }
 
   .view-more-link {
     padding: 0.8rem 2rem;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-title {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    padding: 1.2rem;
+  }
+
+  .project-name {
+    font-size: 1.4rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+
+  .project-link {
+    padding: 0.7rem 1rem;
+    font-size: 0.75rem;
+  }
+
+  .view-more-link {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.5rem;
   }
 }

@@ -12,6 +12,8 @@ const Header = () => {
           title="Home"
           smooth={true}
           duration={500}
+          spy={true}
+          activeClass="active"
         >
           <i className="fas fa-house-user"></i>
           <span className="nav-tooltip">Home</span>
@@ -22,6 +24,8 @@ const Header = () => {
           title="About"
           smooth={true}
           duration={500}
+          spy={true}
+          activeClass="active"
         >
           <i className="fas fa-address-card"></i>
           <span className="nav-tooltip">About</span>
@@ -32,6 +36,8 @@ const Header = () => {
           title="Experience"
           smooth={true}
           duration={500}
+          spy={true}
+          activeClass="active"
         >
           <i className="fas fa-briefcase"></i>
           <span className="nav-tooltip">Experience</span>
@@ -42,6 +48,8 @@ const Header = () => {
           title="Education"
           smooth={true}
           duration={500}
+          spy={true}
+          activeClass="active"
         >
           <i className="fas fa-graduation-cap"></i>
           <span className="nav-tooltip">Education</span>
@@ -52,6 +60,8 @@ const Header = () => {
           title="Projects"
           smooth={true}
           duration={500}
+          spy={true}
+          activeClass="active"
         >
           <i className="fas fa-folder-open"></i>
           <span className="nav-tooltip">Projects</span>
@@ -62,6 +72,8 @@ const Header = () => {
           title="Skills"
           smooth={true}
           duration={500}
+          spy={true}
+          activeClass="active"
         >
           <i className="fas fa-brain"></i>
           <span className="nav-tooltip">Skills</span>
@@ -72,6 +84,8 @@ const Header = () => {
           title="Certificates"
           smooth={true}
           duration={500}
+          spy={true}
+          activeClass="active"
         >
           <i className="fas fa-certificate"></i>
           <span className="nav-tooltip">Certificates</span>
@@ -82,6 +96,8 @@ const Header = () => {
           title="Contact"
           smooth={true}
           duration={500}
+          spy={true}
+          activeClass="active"
         >
           <i className="fas fa-envelope-open-text"></i>
           <span className="nav-tooltip">Contact</span>

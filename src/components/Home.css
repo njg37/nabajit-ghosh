@@ -171,3 +171,21 @@
     padding: 0.8rem 2.5rem;
   }
 }
+
+/* === NEW: Highlight Active Nav Item === */
+.nav-item.active {
+  color: #00bfae;       /* Match your theme's main color */
+  transition: color 0.3s ease;
+}
+
+.nav-item.active i {
+  color: #00bfae;       /* Also color the icon */
+  /* filter: drop-shadow(0 0 5px #00bfae); */
+}
+
+/* Optional: add underline or border to active nav */
+.nav-item.active span.nav-tooltip {
+  font-weight: 600;
+  color: #00bfae;
+  text-shadow: 0 0 5px #00bfae;
+}

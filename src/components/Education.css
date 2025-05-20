@@ -1,23 +1,20 @@
 /* Section Styling */
 .education-section {
     padding: 80px 20px;
-    background: linear-gradient(to right, #ece9e6, #ffffff);
+    background: linear-gradient(to right, #f8f9fa, #ffffff);
     position: relative;
     overflow: hidden;
 }
 
+/* Section Title */
 .section-title {
-    
     text-align: center;
-    font-size: 3rem;
+    font-size: 2.8rem;
     font-weight: bold;
     margin-bottom: 50px;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    color: #333;
-
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 2px;
+    color: #222;
     animation: fadeIn 1s ease-in-out;
 }
 
@@ -35,19 +32,21 @@
 .education-card {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 20px 30px;
+    gap: 25px;
+    padding: 25px 35px;
     background: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease-in-out;
     position: relative;
     overflow: hidden;
+    width: 80%;
+    max-width: 700px;
 }
 
 .education-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .education-card::before {
@@ -57,7 +56,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, rgba(63, 103, 105, 0.1), rgba(11, 210, 203, 0.3));
+    background: linear-gradient(to right, rgba(63, 103, 105, 0.1), rgba(11, 210, 203, 0.2));
     opacity: 0;
     transition: opacity 0.4s ease;
     z-index: 0;
@@ -69,17 +68,22 @@
 
 /* Icon Circle */
 .icon-circle {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(to right, #ff7f50, #ff4b2b);
+    width: 65px;
+    height: 65px;
+    background: linear-gradient(135deg, #ff7f50, #ff4b2b);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #ffffff;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.education-card:hover .icon-circle {
+    transform: rotate(10deg);
 }
 
 /* Education Info */
@@ -88,27 +92,35 @@
 }
 
 .education-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.6rem;
+    margin-bottom: 8px;
     color: #333;
+    font-weight: bold;
 }
 
 .education-info h4 {
     font-size: 1.2rem;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     color: #555;
+    font-weight: 600;
 }
 
 .education-info .field {
     font-size: 1rem;
-    color: #777;
+    color: #666;
     font-style: italic;
 }
 
 .education-info .duration {
     font-size: 1rem;
-    color: #999;
+    color: #444;
     font-weight: bold;
+}
+
+.education-info .score {
+    font-size: 1rem;
+    color: #ff4b2b;
+    font-weight: 600;
 }
 
 /* Background Effect */
@@ -116,9 +128,9 @@
     position: absolute;
     top: -100px;
     left: -100px;
-    width: 300px;
-    height: 300px;
-    background: radial-gradient(circle, rgba(12, 152, 145, 0.716), transparent 70%);
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(12, 152, 145, 0.7), transparent 70%);
     z-index: 0;
     animation: floatEffect 6s infinite ease-in-out;
 }
@@ -128,8 +140,8 @@
     position: absolute;
     top: 200px;
     right: -100px;
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
     background: radial-gradient(circle, rgba(43, 251, 255, 0.5), transparent 70%);
     animation: floatEffectReverse 8s infinite ease-in-out;
 }
@@ -151,7 +163,7 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
 }
 
@@ -160,7 +172,7 @@
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-30px);
+        transform: translateY(-20px);
     }
 }
 
@@ -168,17 +180,20 @@
 @media (max-width: 768px) {
     .education-card {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        width: 90%;
     }
 
     .icon-circle {
-        width: 50px;
-        height: 50px;
-        font-size: 1.5rem;
+        width: 55px;
+        height: 55px;
+        font-size: 1.6rem;
     }
 
     .education-info h3 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     .education-info h4 {
@@ -186,7 +201,8 @@
     }
 
     .education-info .field,
-    .education-info .duration {
-        font-size: 0.9rem;
+    .education-info .duration,
+    .education-info .score {
+        font-size: 0.95rem;
     }
 }
