@@ -14,7 +14,7 @@ const experiences = [
       'Conducted thorough testing and prepared documentation for seamless project deployment.',
       'Gained hands-on experience with PHP, MySQL, API integration, and responsive web design.',
     ],
-    certificateLink: 'https://drive.google.com/file/d/1Qtl9eHAnuE6DQQqgli3q0hdabOUhUcro/view?usp=sharing',
+    certificateLink: 'https://drive.google.com/file/d/1rlD6u3iUD9rDg1RPnONtEpVCv3CJNSuZ/view?usp=sharing',
   },
   {
     title: 'Web Development Intern',
@@ -26,7 +26,7 @@ const experiences = [
       'Ensured all content was tested and compliant with strict non-copying policies.',
       'Delivered top-tier work with effective team communication.',
     ],
-    certificateLink: 'https://drive.google.com/file/d/1rlD6u3iUD9rDg1RPnONtEpVCv3CJNSuZ/view?usp=sharing',
+    certificateLink: 'https://drive.google.com/file/d/1Qtl9eHAnuE6DQQqgli3q0hdabOUhUcro/view?usp=sharing',
   },
 ];
 
