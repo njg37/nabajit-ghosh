@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './Certificate.css';
+
 import JavaCertificateCtshort from "../images/JavaCertificateCutshort.jpg";
 import PythonCertificateCtshort from "../images/PythonCertificateCutshort.jpg";
 import JavascriptCertificateCtshort from "../images/JavascriptCertificateCutshort.jpg";
 import DataStructuresCertificateCtshort from "../images/DataStructuresCertificateCutshort.jpg";
 import WiproTalentNextJavaFullStackCertification from "../images/WiproTalentNextJavaFullStackCertification.png";
+import CleanCodeOOPCertificate from "../images/CleanCodeOOPCertificate.png";
+import ReactJsCertificate from "../images/ReactJsCertificate.png";
 
 const Certificate = () => {
   const [showWiproCertificate, setShowWiproCertificate] = useState(false);
@@ -42,6 +45,22 @@ const Certificate = () => {
       description: "This certificate validates my advanced proficiency in Data Structures, covering algorithms, complexity analysis, and problem-solving techniques, as assessed through Cutshort's skill evaluation test.",
       link: "https://cutshort.io/certificate/111318",
       type: 'cutshort',
+    },
+    {
+      id: 5,
+      image: CleanCodeOOPCertificate,
+      title: "Software Architecture and Clean Code Design in OOP",
+      description: "This certificate demonstrates my understanding of clean code practices, object-oriented design principles, and software architecture patterns essential for building maintainable and scalable applications.",
+      link: "https://www.udemy.com/certificate/UC-901bbaf1-5635-42b5-aea6-879dbf444760/", // Replace with real verification link if available
+      type: 'udemy',
+    },
+    {
+      id: 6,
+      image: ReactJsCertificate,
+      title: "Hands On React JS – From Beginner to Expert",
+      description: "This certificate validates my practical experience in building React applications from scratch. It covers React fundamentals, hooks, state management, routing, and performance optimization.",
+      link: "https://www.udemy.com/certificate/UC-0d0b2a1b-42d5-4e89-8ee7-a0109272163f/", // Replace with real verification link if available
+      type: 'udemy',
     }
   ];
 
@@ -63,6 +82,7 @@ const Certificate = () => {
             <div
               key={cert.id}
               className={`certificate-item ${cert.type}-card ${enlargedCard === cert.id ? 'enlarged-card' : ''}`}
+              onClick={() => toggleEnlargeCard(cert.id)}
             >
               <div className="certificate-inner">
                 <div className="certificate-front">
@@ -84,6 +104,7 @@ const Certificate = () => {
           {/* Wipro Certificate */}
           <div
             className={`certificate-item wipro-card ${enlargedCard === 'wipro' ? 'enlarged-card' : ''}`}
+            onClick={() => toggleEnlargeCard('wipro')}
           >
             <div className="certificate-inner">
               <div className="certificate-front">
@@ -95,7 +116,7 @@ const Certificate = () => {
               </div>
               <div className="certificate-back">
                 <h3 className="certificate-name">Wipro TalentNext – Java Full Stack Certification</h3>
-                <p className="certificate-description">This certificate validates my proficiency in Java Full Stack Development, covering core Java, front-end technologies, databases, and full-stack application development through the Wipro TalentNext Digital Skills Readiness Program</p>
+                <p className="certificate-description">This certificate validates my proficiency in Java Full Stack Development, covering core Java, front-end technologies, databases, and full-stack application development through the Wipro TalentNext Digital Skills Readiness Program.</p>
                 <button className="verify-button" onClick={openWiproModal}>Verify</button>
               </div>
             </div>

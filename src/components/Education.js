@@ -8,7 +8,7 @@ const educationDetails = [
     institution: 'Bengal College of Engineering and Technology, MAKAUT University',
     field: 'Computer Science and Engineering',
     duration: '2021-2025',
-    score: 'CGPA: 8.19 (till 7th Semester)',
+    score: 'CGPA: 8.12',
     icon: <FaGraduationCap />,
   },
   {
