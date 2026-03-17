@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import { ThemeProvider } from './components/ThemeContext.jsx';
+
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -20,6 +22,7 @@ function App() {
 
   return (
     <Router>
+      <ThemeProvider>
       <div className="app">
         <Header />
         <main>
@@ -29,6 +32,7 @@ function App() {
         </main>
         <Footer />
       </div>
+      </ThemeProvider>
     </Router>
   );
 }
