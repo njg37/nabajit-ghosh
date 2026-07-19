@@ -1,146 +1,46 @@
-/* ═══════════════════════════════════════════════════════════════
-   NABAJIT GHOSH — PORTFOLIO THEME SYSTEM
-   Import this in index.css or App.css
-   ═══════════════════════════════════════════════════════════════ */
-
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap');
-
-/* ── DARK THEME ─────────────────────────────────────────────── */
 :root,
 [data-theme="dark"] {
-  --bg-0:          #08080c;
-  --bg-1:          #0b0b10;
-  --bg-card:       rgba(255,255,255,0.025);
-  --bg-card-h:     rgba(0,255,200,0.035);
-  --bg-tag:        rgba(0,255,200,0.07);
-  --bg-icon:       rgba(0,255,200,0.09);
-  --bg-input:      rgba(255,255,255,0.035);
-  --bg-nav:        rgba(8,8,12,0.93);
-
-  --bdr:           rgba(255,255,255,0.07);
-  --bdr-h:         rgba(0,255,200,0.22);
-  --bdr-acc:       rgba(0,255,200,0.28);
-
-  --tx-1:          #f0f0f5;
-  --tx-2:          rgba(232,232,237,0.62);
-  --tx-3:          rgba(232,232,237,0.36);
-  --tx-4:          rgba(232,232,237,0.18);
-
-  --acc:           #00ffc8;
-  --acc-d:         rgba(0,255,200,0.72);
-  --acc-s:         rgba(0,255,200,0.42);
-  --acc-bg:        rgba(0,255,200,0.08);
-  --acc-glow:      rgba(0,255,200,0.22);
-
-  --btn-bg:        #00ffc8;
-  --btn-tx:        #08080c;
-
-  --inp-bdr:       rgba(255,255,255,0.08);
-  --inp-bdr-f:     rgba(0,255,200,0.32);
-  --inp-ph:        rgba(232,232,237,0.22);
-  --inp-tx:        #f0f0f5;
-
-  --div:           rgba(255,255,255,0.05);
-  --sep:           linear-gradient(90deg,transparent,rgba(0,255,200,0.18),transparent);
-
-  --sh:            0 8px 32px rgba(0,0,0,0.45);
-  --sh-h:          0 16px 48px rgba(0,0,0,0.55), 0 0 0 1px rgba(0,255,200,0.1);
-  --sh-acc:        0 0 32px rgba(0,255,200,0.28);
-
-  --map-f:         grayscale(80%) brightness(0.48) contrast(1.1);
-  --map-fh:        grayscale(15%) brightness(0.78);
-  --ghost-tx:      rgba(255,255,255,0.012);
-  --img-f:         grayscale(18%) contrast(1.05) brightness(0.92);
-  --img-fh:        grayscale(0%) contrast(1.1) brightness(1);
+  --bg: #080a09;
+  --bg-elevated: #0d100f;
+  --bg-soft: #121614;
+  --surface: rgba(255, 255, 255, 0.035);
+  --surface-hover: rgba(255, 255, 255, 0.065);
+  --text: #f4f2eb;
+  --text-muted: #a8aca5;
+  --text-soft: #747b75;
+  --line: rgba(244, 242, 235, 0.12);
+  --line-strong: rgba(244, 242, 235, 0.22);
+  --accent: #79f2c2;
+  --accent-strong: #afffdd;
+  --accent-rgb: 121, 242, 194;
+  --secondary: #8b7cf6;
+  --secondary-rgb: 139, 124, 246;
+  --on-accent: #07110d;
+  --header: rgba(8, 10, 9, 0.82);
+  --input: rgba(255, 255, 255, 0.04);
+  --shadow: 0 28px 90px rgba(0, 0, 0, 0.36);
+  --portrait-filter: saturate(0.82) contrast(1.04);
 }
 
-/* ── LIGHT THEME ─────────────────────────────────────────────── */
 [data-theme="light"] {
-  --bg-0:          #f2f0eb;
-  --bg-1:          #e8e5de;
-  --bg-card:       rgba(255,255,255,0.82);
-  --bg-card-h:     rgba(255,255,255,0.98);
-  --bg-tag:        rgba(0,108,86,0.08);
-  --bg-icon:       rgba(0,108,86,0.1);
-  --bg-input:      rgba(255,255,255,0.9);
-  --bg-nav:        rgba(242,240,235,0.95);
-
-  --bdr:           rgba(0,0,0,0.08);
-  --bdr-h:         rgba(0,108,86,0.28);
-  --bdr-acc:       rgba(0,108,86,0.32);
-
-  --tx-1:          #18181d;
-  --tx-2:          rgba(24,24,29,0.62);
-  --tx-3:          rgba(24,24,29,0.4);
-  --tx-4:          rgba(24,24,29,0.2);
-
-  --acc:           #00684e;
-  --acc-d:         rgba(0,104,78,0.78);
-  --acc-s:         rgba(0,104,78,0.44);
-  --acc-bg:        rgba(0,104,78,0.07);
-  --acc-glow:      rgba(0,104,78,0.14);
-
-  --btn-bg:        #00684e;
-  --btn-tx:        #ffffff;
-
-  --inp-bdr:       rgba(0,0,0,0.1);
-  --inp-bdr-f:     rgba(0,104,78,0.38);
-  --inp-ph:        rgba(24,24,29,0.28);
-  --inp-tx:        #18181d;
-
-  --div:           rgba(0,0,0,0.07);
-  --sep:           linear-gradient(90deg,transparent,rgba(0,104,78,0.18),transparent);
-
-  --sh:            0 4px 20px rgba(0,0,0,0.07);
-  --sh-h:          0 12px 36px rgba(0,0,0,0.12), 0 0 0 1px rgba(0,104,78,0.1);
-  --sh-acc:        0 0 24px rgba(0,104,78,0.2);
-
-  --map-f:         grayscale(25%) brightness(1.02) contrast(1);
-  --map-fh:        grayscale(0%) brightness(1.04);
-  --ghost-tx:      rgba(0,0,0,0.028);
-  --img-f:         grayscale(12%) contrast(1.02) brightness(1);
-  --img-fh:        grayscale(0%) contrast(1.05) brightness(1.02);
-}
-
-/* ── GLOBAL BASE ───────────────────────────────────────────── */
-*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
-html { scroll-behavior:smooth; }
-
-body {
-  font-family:'DM Sans',sans-serif;
-  background-color: var(--bg-0);
-  color: var(--tx-1);
-  overflow-x:hidden;
-  transition: background-color .4s ease, color .4s ease;
-}
-
-/* ── section right-padding for fixed nav ── */
-.ng-sec { padding-right:64px; }
-@media(max-width:768px){ .ng-sec{ padding-right:0; padding-top:52px; } }
-
-/* ── scroll-reveal util ── */
-.ng-rv {
-  opacity:0;
-  transform:translateY(22px) scale(.985);
-  transition:opacity .55s ease, transform .55s ease;
-}
-.ng-rv.ng-in { opacity:1; transform:none; }
-
-/* ── shared section header ── */
-.ng-lbl {
-  font-family:'DM Sans',sans-serif;
-  font-size:.64rem;
-  font-weight:500;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--acc);
-  display:block;
-  margin-bottom:10px;
-}
-.ng-hd {
-  font-family:'Syne',sans-serif;
-  font-size:clamp(1.9rem,5vw,3.4rem);
-  font-weight:800;
-  color:var(--tx-1);
-  line-height:1.06;
+  --bg: #f0ece4;
+  --bg-elevated: #f8f5ef;
+  --bg-soft: #e6e0d6;
+  --surface: rgba(255, 255, 255, 0.54);
+  --surface-hover: rgba(255, 255, 255, 0.88);
+  --text: #121513;
+  --text-muted: #515952;
+  --text-soft: #747d76;
+  --line: rgba(18, 21, 19, 0.14);
+  --line-strong: rgba(18, 21, 19, 0.26);
+  --accent: #087558;
+  --accent-strong: #005a42;
+  --accent-rgb: 8, 117, 88;
+  --secondary: #6353c9;
+  --secondary-rgb: 99, 83, 201;
+  --on-accent: #f7fff9;
+  --header: rgba(240, 236, 228, 0.86);
+  --input: rgba(255, 255, 255, 0.56);
+  --shadow: 0 28px 90px rgba(39, 34, 25, 0.13);
+  --portrait-filter: saturate(0.9) contrast(1.02);
 }

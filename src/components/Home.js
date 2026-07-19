@@ -1,392 +1,645 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FaArrowDown, FaLinkedin, FaGithub, FaEnvelope } from "react-icons/fa";
-import { Link as ScrollLink } from "react-scroll";
-import njg37 from "../images/njg37.jpeg";
-import About       from "../components/About";
-import Experience  from "../components/Experience";
-import Education   from "../components/Education";
-import Projects    from "../components/Projects";
-import Skills      from "../components/Skills";
-import Certificate from "../components/Certificate";
-import Contact     from "../components/Contact";
+import {
+  FiArrowDownRight,
+  FiArrowRight,
+  FiArrowUpRight,
+  FiCheck,
+  FiCopy,
+  FiGithub,
+  FiLinkedin,
+  FiMail,
+  FiMapPin,
+  FiPhone,
+  FiSend,
+} from "react-icons/fi";
+import profilePhoto from "../images/n1.png";
+import reactCertificate from "../images/ReactJsCertificate.png";
+import cleanCodeCertificate from "../images/CleanCodeOOPCertificate.png";
+import wiproCertificate from "../images/WiproTalentNextJavaFullStackCertification.png";
 
-const ROLES = ["Software Developer", "Full Stack Dev", "Problem Solver",];
+const RESUME_URL =
+  "https://drive.google.com/file/d/1Ri4qDqNSeaxhqIrolkxeqa_u0Oc5-Omb/view?usp=sharing";
 
-/* ─────────────────────────────────────────────────────
-   Fixed typewriter — all loop state lives in a single
-   ref so there is NO intermediate render that could
-   flash the full word. Only setTxt() triggers a paint.
-───────────────────────────────────────────────────── */
-function useTypewriter(words, speed = 78, pause = 1900) {
-  const [txt, setTxt] = useState("");
-  const loop = useRef({ wi: 0, ci: 0, del: false });
+const PROJECTS = [
+  {
+    number: "01",
+    name: "Task Management System",
+    category: "Full-stack product",
+    description:
+      "A role-aware workspace for creating, prioritising and tracking team tasks—from secure sign-in through exportable reports.",
+    decisions: ["JWT authentication", "Admin / user permissions", "CSV report generation"],
+    stack: ["React", "Node.js", "Express", "MongoDB"],
+    live: "https://njg37.github.io/task-manager-client/",
+    code: "https://github.com/njg37/task-manager-client",
+    visual: "tasks",
+  },
+  {
+    number: "02",
+    name: "Song Background Generator",
+    category: "Media tooling",
+    description:
+      "A guided workflow that turns an uploaded song and a visual theme into a previewable, downloadable video.",
+    decisions: ["File upload pipeline", "FFmpeg processing", "Preview-first workflow"],
+    stack: ["React", "Node.js", "Multer", "FFmpeg"],
+    live: "https://njg37.github.io/upload",
+    code: "https://github.com/njg37/video_generator",
+    visual: "audio",
+  },
+  {
+    number: "03",
+    name: "Text Utils",
+    category: "Frontend utility",
+    description:
+      "A focused writing utility for cleaning, transforming and analysing text without slowing down the user’s flow.",
+    decisions: ["Instant transformations", "Reading-time estimate", "Accessible dark mode"],
+    stack: ["React", "JavaScript", "Bootstrap", "GitHub Pages"],
+    live: "https://njg37.github.io/TextUtils.React/",
+    code: "https://github.com/njg37/TextUtils.React",
+    visual: "text",
+  },
+];
 
-  useEffect(() => {
-    let timer;
+const MORE_PROJECTS = [
+  {
+    name: "News App",
+    summary: "Real-time news discovery with category filters and article search.",
+    stack: "React · News API",
+    code: "https://github.com/njg37/NewsMonkey-Reactjs",
+  },
+  {
+    name: "Quiz Gamification",
+    summary: "API-powered quizzes with feedback, animation and persistent scores.",
+    stack: "React · Framer Motion",
+    code: "https://github.com/njg37/quiz-app",
+  },
+  {
+    name: "WeatherWatcher",
+    summary: "Weather lookup with authentication, profiles and live forecast data.",
+    stack: "PHP · MySQL · Weather API",
+    code: "https://github.com/njg37/intern-PHP-MYSQL",
+  },
+];
 
-    const tick = () => {
-      const s   = loop.current;
-      const cur = words[s.wi];
+const EXPERIENCE = [
+  {
+    period: "Aug — Sep 2024",
+    role: "Web Development Intern",
+    company: "ApexPlanet Software Pvt Ltd",
+    points: [
+      "Implemented admin and user authentication flows with PHP and MySQL.",
+      "Integrated profile uploads and live API data into the account experience.",
+      "Tested responsive views and documented the deployment workflow.",
+    ],
+    certificate:
+      "https://drive.google.com/file/d/1rlD6u3iUD9rDg1RPnONtEpVCv3CJNSuZ/view?usp=sharing",
+  },
+  {
+    period: "Jul — Aug 2024",
+    role: "Web Development Intern",
+    company: "CodeSpeedy",
+    points: [
+      "Created and tested original JavaScript and CSS tutorials for publication.",
+      "Worked inside WordPress to deliver production-ready web content.",
+      "Collaborated through review cycles while meeting strict quality standards.",
+    ],
+    certificate:
+      "https://drive.google.com/file/d/1Qtl9eHAnuE6DQQqgli3q0hdabOUhUcro/view?usp=sharing",
+  },
+];
 
-      if (!s.del && s.ci < cur.length) {
-        // type one more character
-        s.ci += 1;
-        setTxt(cur.slice(0, s.ci));
-        timer = setTimeout(tick, speed);
+const CAPABILITIES = [
+  {
+    number: "01",
+    title: "Frontend systems",
+    description: "Responsive interfaces with clear states, reusable components and considered interaction.",
+    tools: ["React", "Next.js", "JavaScript", "TypeScript", "HTML", "CSS"],
+  },
+  {
+    number: "02",
+    title: "Backend & APIs",
+    description: "Practical services that handle authentication, data flow and product logic reliably.",
+    tools: ["Node.js", "Express", "REST APIs", "PHP", "JWT", "Postman"],
+  },
+  {
+    number: "03",
+    title: "Data & problem solving",
+    description: "Structured thinking across application data, algorithms and maintainable design.",
+    tools: ["MongoDB", "MySQL", "Python", "DSA", "Java", "OOP"],
+  },
+  {
+    number: "04",
+    title: "Delivery workflow",
+    description: "From local development to version control, deployment and product iteration.",
+    tools: ["Git", "GitHub", "GitHub Pages", "Render", "VS Code", "Cloud basics"],
+  },
+];
 
-      } else if (!s.del && s.ci === cur.length) {
-        // word complete → pause then start erasing
-        s.del = true;
-        timer = setTimeout(tick, pause);
+const EDUCATION = [
+  {
+    period: "2021 — 2025",
+    title: "B.Tech · Computer Science & Engineering",
+    institution: "Bengal College of Engineering & Technology · MAKAUT",
+    result: "8.12 CGPA",
+  },
+  {
+    period: "2020 — 2021",
+    title: "Higher Secondary · Science",
+    institution: "Kamalpur Class XII School · TBSE, Tripura",
+    result: "85.8%",
+  },
+  {
+    period: "2018 — 2019",
+    title: "Secondary Education",
+    institution: "Kamalpur Madrassa Class XII School · TBSE, Tripura",
+    result: "81.2%",
+  },
+];
 
-      } else if (s.del && s.ci > 0) {
-        // erase one character
-        s.ci -= 1;
-        setTxt(cur.slice(0, s.ci));
-        timer = setTimeout(tick, speed / 2);
+const CERTIFICATES = [
+  {
+    title: "React JS — Beginner to Expert",
+    issuer: "Udemy",
+    category: "Frontend",
+    image: reactCertificate,
+    link: "https://www.udemy.com/certificate/UC-0d0b2a1b-42d5-4e89-8ee7-a0109272163f/",
+  },
+  {
+    title: "Clean Code & OOP Design",
+    issuer: "Udemy",
+    category: "Architecture",
+    image: cleanCodeCertificate,
+    link: "https://www.udemy.com/certificate/UC-901bbaf1-5635-42b5-aea6-879dbf444760/",
+  },
+  {
+    title: "Java Full Stack Certification",
+    issuer: "Wipro TalentNext",
+    category: "Full stack",
+    image: wiproCertificate,
+  },
+  {
+    title: "Cloud Computing with AWS",
+    issuer: "Internshala",
+    category: "Cloud",
+    link: "https://drive.google.com/file/d/14UZpAx1AKGwwVyx8340VAEyYW-F9amgq/view?usp=sharing",
+  },
+];
 
-      } else {
-        // fully erased → next word
-        s.wi  = (s.wi + 1) % words.length;
-        s.ci  = 0;
-        s.del = false;
-        setTxt("");
-        timer = setTimeout(tick, speed);
-      }
-    };
+const SOCIALS = [
+  { label: "GitHub", href: "https://github.com/njg37", icon: <FiGithub /> },
+  { label: "LinkedIn", href: "https://linkedin.com/in/nabajit-ghosh", icon: <FiLinkedin /> },
+  { label: "Email", href: "mailto:nabajitghosh225@gmail.com", icon: <FiMail /> },
+];
 
-    // 400 ms initial delay so the very first char types in cleanly
-    // with no flash of a full word
-    timer = setTimeout(tick, 400);
-    return () => clearTimeout(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // intentionally empty — loop ref holds all mutable state
+function SectionHeading({ index, eyebrow, title, description, headingId }) {
+  return (
+    <div className="section-heading" data-reveal>
+      <div className="section-kicker">
+        <span>{index}</span>
+        <p>{eyebrow}</p>
+      </div>
+      <div className="section-title-row">
+        <h2 id={headingId}>{title}</h2>
+        {description && <p>{description}</p>}
+      </div>
+    </div>
+  );
+}
 
-  return txt;
+function ProjectVisual({ type }) {
+  if (type === "tasks") {
+    return (
+      <div className="project-visual visual-tasks" aria-hidden="true">
+        <div className="mock-window-bar"><i /><i /><i /><span>workspace / overview</span></div>
+        <div className="task-layout">
+          <div className="mock-sidebar"><b>NG</b><i /><i /><i /><i /></div>
+          <div className="task-main">
+            <div className="mock-toolbar"><strong>Project board</strong><span>+ New task</span></div>
+            <div className="task-columns">
+              {["Backlog", "In progress", "Complete"].map((label, column) => (
+                <div className="task-column" key={label}>
+                  <small>{label}</small>
+                  {Array.from({ length: column === 1 ? 3 : 2 }).map((_, item) => (
+                    <div className="mock-task" key={item}>
+                      <i style={{ width: `${62 + ((item + column) % 3) * 12}%` }} />
+                      <i style={{ width: `${40 + ((item + column) % 2) * 18}%` }} />
+                      <span>{column === 2 ? "Done" : column === 1 ? "Active" : "Queued"}</span>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (type === "audio") {
+    return (
+      <div className="project-visual visual-audio" aria-hidden="true">
+        <div className="audio-orb"><span>NG</span></div>
+        <div className="waveform">
+          {Array.from({ length: 34 }).map((_, index) => (
+            <i key={index} style={{ "--bar": `${20 + ((index * 17) % 76)}%`, "--delay": `${index * -0.04}s` }} />
+          ))}
+        </div>
+        <div className="audio-controls"><i /><b /><i /></div>
+        <div className="audio-meta"><span>Theme / midnight</span><span>02:48</span></div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="project-visual visual-text" aria-hidden="true">
+      <div className="text-toolbar"><span>Text workspace</span><i>Dark mode</i></div>
+      <div className="text-editor">
+        <div className="text-lines">
+          <i /><i /><i /><i /><i />
+        </div>
+        <div className="text-actions"><span>UPPERCASE</span><span>lowercase</span><span>Clean spaces</span></div>
+      </div>
+      <div className="text-stats"><span><b>247</b> words</span><span><b>1.2</b> min read</span><span><b>1,442</b> characters</span></div>
+    </div>
+  );
+}
+
+function ContactForm() {
+  const [status, setStatus] = useState("idle");
+
+  const submit = async (event) => {
+    event.preventDefault();
+    setStatus("loading");
+
+    const form = event.currentTarget;
+
+    try {
+      const response = await fetch("https://formspree.io/f/xdkowbjq", {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+
+      if (!response.ok) throw new Error("Unable to send message");
+      form.reset();
+      setStatus("success");
+    } catch {
+      setStatus("error");
+    }
+  };
+
+  return (
+    <form className="contact-form" onSubmit={submit} data-reveal>
+      <div className="form-row">
+        <label>
+          <span>Your name</span>
+          <input type="text" name="name" autoComplete="name" placeholder="How should I address you?" required />
+        </label>
+        <label>
+          <span>Email address</span>
+          <input type="email" name="email" autoComplete="email" placeholder="you@company.com" required />
+        </label>
+      </div>
+      <label>
+        <span>Tell me about the opportunity</span>
+        <textarea name="message" rows="5" placeholder="A role, a project, or an interesting problem…" required />
+      </label>
+      <div className="form-submit-row">
+        <button className="button button-primary" type="submit" disabled={status === "loading"}>
+          {status === "loading" ? "Sending…" : "Send message"}
+          {status === "success" ? <FiCheck aria-hidden="true" /> : <FiSend aria-hidden="true" />}
+        </button>
+        <p className={`form-status is-${status}`} role="status" aria-live="polite">
+          {status === "success" && "Thanks — your message is on its way."}
+          {status === "error" && "That did not send. Please email me directly instead."}
+        </p>
+      </div>
+    </form>
+  );
 }
 
 export default function Home() {
-  const role      = useTypewriter(ROLES);
-  const canvasRef = useRef(null);
+  const pageRef = useRef(null);
+  const [copied, setCopied] = useState(false);
 
-  /* animated particle canvas */
   useEffect(() => {
-    const cvs = canvasRef.current;
-    if (!cvs) return;
-    const ctx = cvs.getContext("2d");
-    const resize = () => { cvs.width = cvs.offsetWidth; cvs.height = cvs.offsetHeight; };
-    resize();
+    const elements = pageRef.current?.querySelectorAll("[data-reveal]");
+    if (!elements?.length) return undefined;
 
-    const pts = Array.from({ length: 50 }, () => ({
-      x: Math.random() * cvs.width,  y: Math.random() * cvs.height,
-      r: Math.random() * 1.4 + 0.3,
-      dx: (Math.random() - .5) * .38, dy: (Math.random() - .5) * .38,
-      o: Math.random() * .45 + .1,
-    }));
+    if (!("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add("is-visible"));
+      return undefined;
+    }
 
-    const getAcc = () =>
-      getComputedStyle(document.documentElement).getPropertyValue("--acc").trim() || "#00ffc8";
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -6%" }
+    );
 
-    let raf;
-    const draw = () => {
-      ctx.clearRect(0, 0, cvs.width, cvs.height);
-      const acc = getAcc();
-      pts.forEach(p => {
-        p.x += p.dx; p.y += p.dy;
-        if (p.x < 0 || p.x > cvs.width)  p.dx *= -1;
-        if (p.y < 0 || p.y > cvs.height) p.dy *= -1;
-        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = acc; ctx.globalAlpha = p.o;
-        ctx.fill(); ctx.globalAlpha = 1;
-      });
-      pts.forEach((a, i) => pts.slice(i + 1).forEach(b => {
-        const d = Math.hypot(a.x - b.x, a.y - b.y);
-        if (d < 110) {
-          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = acc;
-          ctx.globalAlpha = 0.055 * (1 - d / 110); ctx.lineWidth = .5;
-          ctx.stroke(); ctx.globalAlpha = 1;
-        }
-      }));
-      raf = requestAnimationFrame(draw);
-    };
-    draw();
-    window.addEventListener("resize", resize);
-    return () => { cancelAnimationFrame(raf); window.removeEventListener("resize", resize); };
+    elements.forEach((element) => observer.observe(element));
+    return () => observer.disconnect();
   }, []);
 
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("nabajitghosh225@gmail.com");
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2200);
+    } catch {
+      window.location.href = "mailto:nabajitghosh225@gmail.com";
+    }
+  };
+
   return (
-    <>
-      <style>{`
-        .ngHome {
-          min-height:100vh; display:flex; align-items:center;
-          position:relative; overflow:hidden;
-          background:var(--bg-0); transition:background .4s ease;
-        }
-        .ngHome-cvs {
-          position:absolute; inset:0; width:100%; height:100%;
-          pointer-events:none; opacity:.9;
-        }
-        .ngHome-blob { position:absolute; border-radius:50%; pointer-events:none; }
-        .ngHome-blob1 {
-          width:560px; height:560px; top:-80px; left:-80px;
-          background:radial-gradient(circle,var(--acc-bg) 0%,transparent 70%);
-        }
-        .ngHome-blob2 {
-          width:380px; height:380px; bottom:0; right:80px;
-          background:radial-gradient(circle,var(--acc-bg) 0%,transparent 70%);
-        }
-        .ngHome-inner {
-          position:relative; z-index:2;
-          max-width:1100px; margin:0 auto;
-          padding:0 3rem; width:100%;
-          display:flex; align-items:center; gap:5rem;
-        }
+    <div ref={pageRef}>
+      <section className="hero" id="home" aria-labelledby="hero-title">
+        <div className="hero-grid" aria-hidden="true" />
+        <div className="ambient ambient-one" aria-hidden="true" />
+        <div className="ambient ambient-two" aria-hidden="true" />
 
-        /* avatar */
-        .ngHome-imgW { position:relative; flex-shrink:0; }
-        .ngHome-ring {
-          position:absolute; inset:-12px; border-radius:50%;
-          border:1.5px solid var(--bdr-acc);
-          animation:ngSpin 12s linear infinite;
-        }
-        .ngHome-ring2 {
-          position:absolute; inset:-22px; border-radius:50%;
-          border:1px solid var(--bdr);
-          animation:ngSpin 20s linear infinite reverse;
-        }
-        @keyframes ngSpin { to { transform:rotate(360deg); } }
-        .ngHome-ring::before, .ngHome-ring2::before {
-          content:''; position:absolute; width:6px; height:6px;
-          background:var(--acc); border-radius:50%;
-          top:-3px; left:50%; transform:translateX(-50%);
-          box-shadow:0 0 8px var(--acc);
-        }
-        .ngHome-avatar {
-          width:230px; height:230px; border-radius:50%;
-          object-fit:cover; display:block;
-          border:3px solid var(--bdr-acc);
-          filter:var(--img-f); transition:filter .4s ease;
-        }
-        .ngHome-imgW:hover .ngHome-avatar { filter:var(--img-fh); }
-        .ngHome-status {
-          position:absolute; bottom:4px; right:4px;
-          background:var(--bg-nav); border:1px solid var(--bdr-acc);
-          border-radius:20px; padding:5px 12px;
-          font-family:'DM Sans',sans-serif; font-size:.63rem;
-          font-weight:500; color:var(--acc); letter-spacing:.08em;
-          display:flex; align-items:center; gap:6px; white-space:nowrap;
-          transition:background .4s;
-        }
-        .ngHome-sdot {
-          width:6px; height:6px; background:var(--acc);
-          border-radius:50%; animation:ngPulse 2s ease infinite;
-        }
-        @keyframes ngPulse {
-          0%,100%{transform:scale(1);opacity:1}
-          50%{transform:scale(1.5);opacity:.55}
-        }
-
-        /* text content */
-        .ngHome-content { flex:1; }
-        .ngHome-greet {
-          font-family:'DM Sans',sans-serif; font-size:.78rem;
-          font-weight:400; letter-spacing:.26em; text-transform:uppercase;
-          color:var(--acc); margin-bottom:16px;
-          animation:ngFU .8s ease both;
-        }
-        .ngHome-name {
-          font-family:'Syne',sans-serif;
-          font-size:clamp(2.5rem,6vw,4.4rem);
-          font-weight:800; line-height:1; color:var(--tx-1);
-          margin-bottom:16px; animation:ngFU .8s .1s ease both;
-        }
-        .ngHome-role-row {
-          height:36px; display:flex; align-items:center;
-          gap:8px; margin-bottom:24px;
-          animation:ngFU .8s .2s ease both;
-        }
-        .ngHome-role-pre {
-          font-family:'DM Sans',sans-serif; font-size:.95rem;
-          color:var(--tx-3); font-weight:300;
-        }
-        /* fixed min-width so layout doesn't jump between words */
-        .ngHome-role-txt {
-          font-family:'Syne',sans-serif; font-size:1.1rem;
-          font-weight:700; color:var(--acc); min-width:240px;
-        }
-        .ngHome-caret {
-          display:inline-block; width:2px; height:1.1em;
-          background:var(--acc); margin-left:2px;
-          vertical-align:middle; animation:ngBlink 1s step-end infinite;
-        }
-        @keyframes ngBlink { 0%,100%{opacity:1} 50%{opacity:0} }
-        .ngHome-desc {
-          font-family:'DM Sans',sans-serif; font-size:.93rem;
-          line-height:1.78; color:var(--tx-2);
-          max-width:460px; margin-bottom:34px; font-weight:300;
-          animation:ngFU .8s .3s ease both;
-        }
-        .ngHome-actions {
-          display:flex; align-items:center; gap:16px;
-          flex-wrap:wrap; animation:ngFU .8s .4s ease both;
-        }
-        .ngHome-btnP {
-          display:inline-flex; align-items:center; gap:10px;
-          padding:13px 26px; background:var(--btn-bg); color:var(--btn-tx);
-          font-family:'Syne',sans-serif; font-size:.82rem; font-weight:700;
-          letter-spacing:.05em; text-transform:uppercase; border-radius:7px;
-          text-decoration:none; border:none; cursor:pointer;
-          transition:all .3s ease; position:relative; overflow:hidden;
-        }
-        .ngHome-btnP::before {
-          content:''; position:absolute; inset:0;
-          background:rgba(255,255,255,.18);
-          transform:translateX(-100%) skewX(-15deg);
-          transition:transform .4s ease;
-        }
-        .ngHome-btnP:hover::before { transform:translateX(150%) skewX(-15deg); }
-        .ngHome-btnP:hover { box-shadow:var(--sh-acc); transform:translateY(-2px); }
-        .ngHome-btnG {
-          display:inline-flex; align-items:center; gap:8px;
-          padding:12px 22px; background:transparent; color:var(--tx-2);
-          font-family:'DM Sans',sans-serif; font-size:.85rem;
-          border:1px solid var(--bdr); border-radius:7px;
-          text-decoration:none; cursor:pointer; transition:all .3s ease;
-        }
-        .ngHome-btnG:hover {
-          border-color:var(--bdr-h); color:var(--acc); background:var(--acc-bg);
-        }
-        .ngHome-socials {
-          display:flex; gap:12px; margin-top:28px;
-          animation:ngFU .8s .5s ease both;
-        }
-        .ngHome-soc {
-          width:38px; height:38px; display:flex; align-items:center;
-          justify-content:center; border:1px solid var(--bdr);
-          border-radius:8px; color:var(--tx-3); font-size:.9rem;
-          text-decoration:none; transition:all .3s ease;
-        }
-        .ngHome-soc:hover {
-          border-color:var(--bdr-h); color:var(--acc);
-          background:var(--acc-bg); transform:translateY(-3px);
-        }
-
-        /* scroll hint */
-        .ngHome-scroll {
-          position:absolute; bottom:34px; left:50%;
-          transform:translateX(-50%); z-index:2;
-          display:flex; flex-direction:column; align-items:center; gap:8px;
-          cursor:pointer; animation:ngFU 1s 1s ease both;
-        }
-        .ngHome-scroll span {
-          font-family:'DM Sans',sans-serif; font-size:.6rem;
-          letter-spacing:.2em; text-transform:uppercase; color:var(--tx-4);
-        }
-        .ngHome-mouse {
-          width:22px; height:34px; border:1.5px solid var(--bdr);
-          border-radius:11px; display:flex; justify-content:center; padding-top:5px;
-        }
-        .ngHome-wheel {
-          width:3px; height:7px; background:var(--acc);
-          border-radius:2px; animation:ngWheel 1.8s ease infinite;
-        }
-        @keyframes ngWheel {
-          0%  { transform:translateY(0);   opacity:1; }
-          100%{ transform:translateY(10px);opacity:0; }
-        }
-        @keyframes ngFU {
-          from { opacity:0; transform:translateY(24px); }
-          to   { opacity:1; transform:none; }
-        }
-
-        @media(max-width:768px){
-          .ngHome-inner {
-            flex-direction:column; padding:2rem 1.5rem;
-            gap:2.5rem; text-align:center;
-          }
-          .ngHome-avatar { width:170px; height:170px; }
-          .ngHome-desc { margin:0 auto 28px; }
-          .ngHome-actions, .ngHome-socials, .ngHome-role-row { justify-content:center; }
-          .ngHome-scroll { display:none; }
-        }
-      `}</style>
-
-      <section className="ngHome ng-sec" id="home">
-        <canvas ref={canvasRef} className="ngHome-cvs" />
-        <div className="ngHome-blob ngHome-blob1" />
-        <div className="ngHome-blob ngHome-blob2" />
-
-        <div className="ngHome-inner">
-          {/* avatar */}
-          <div className="ngHome-imgW">
-            <div className="ngHome-ring" />
-            <div className="ngHome-ring2" />
-            <img src={njg37} alt="Nabajit Ghosh" className="ngHome-avatar" />
-            <div className="ngHome-status">
-              <span className="ngHome-sdot" />
-              Open to Opportunities
+        <div className="container hero-layout">
+          <div className="hero-copy">
+            <p className="eyebrow hero-eyebrow">
+              <span className="availability-dot" />
+              Full-stack developer
+            </p>
+            <h1 id="hero-title">
+              I build dependable web products
+              <span>from interface to API.</span>
+            </h1>
+            <p className="hero-description">
+              I’m Nabajit Ghosh, a MERN-focused developer turning product ideas into responsive,
+              deployable software—with practical curiosity for AI and cloud systems.
+            </p>
+            <div className="hero-actions">
+              <a className="button button-primary" href="#projects">
+                View selected work <FiArrowDownRight aria-hidden="true" />
+              </a>
+              <a className="button button-ghost" href="#contact">
+                Let’s talk <FiArrowRight aria-hidden="true" />
+              </a>
+            </div>
+            <div className="hero-socials" aria-label="Social links">
+              {SOCIALS.map((social) => (
+                <a key={social.label} href={social.href} target={social.href.startsWith("http") ? "_blank" : undefined} rel="noreferrer" aria-label={social.label}>
+                  {social.icon}
+                </a>
+              ))}
+              <span />
+              <p>Open to software roles and select freelance builds.</p>
             </div>
           </div>
 
-          {/* text */}
-          <div className="ngHome-content">
-            <p className="ngHome-greet">👋 Hello, I'm</p>
-            <h1 className="ngHome-name">Nabajit Ghosh</h1>
-            <div className="ngHome-role-row">
-              <span className="ngHome-role-pre">I'm a</span>
-              <span className="ngHome-role-txt">
-                {role}<span className="ngHome-caret" />
-              </span>
+          <div className="hero-visual" aria-label="Portrait of Nabajit Ghosh">
+            <div className="portrait-frame">
+              <div className="portrait-index" aria-hidden="true">NjG</div>
+              <img src={profilePhoto} alt="Nabajit Ghosh" />
+              <div className="portrait-shade" aria-hidden="true" />
+              <div className="portrait-caption">
+                <span>Currently exploring</span>
+                <strong>AI-powered web experiences</strong>
+              </div>
             </div>
-            <p className="ngHome-desc">
-              Building responsive, dynamic web apps with the MERN stack. I
-              love turning ideas into real products and learning new
-              technologies along the way.
-            </p>
-            <div className="ngHome-actions">
-              <ScrollLink to="about" smooth duration={700} className="ngHome-btnP">
-                Explore My Work <FaArrowDown size={12} />
-              </ScrollLink>
-              <a
-                href="https://drive.google.com/file/d/1Ri4qDqNSeaxhqIrolkxeqa_u0Oc5-Omb/view?usp=sharing"
-                target="_blank" rel="noopener noreferrer" className="ngHome-btnG"
-              >
-                View Resume
-              </a>
+            <div className="hero-note note-code" aria-hidden="true">
+              <span>build.status</span><strong>ready</strong>
             </div>
-            <div className="ngHome-socials">
-              {[
-                { href: "https://linkedin.com/in/nabajit-ghosh", icon: <FaLinkedin />, label: "LinkedIn" },
-                { href: "https://github.com/njg37",              icon: <FaGithub />,   label: "GitHub" },
-                { href: "mailto:nabajitghosh225@gmail.com",      icon: <FaEnvelope />, label: "Email" },
-              ].map(s => (
-                <a
-                  key={s.label} href={s.href}
-                  target={s.href.startsWith("http") ? "_blank" : undefined}
-                  rel="noopener noreferrer"
-                  className="ngHome-soc" aria-label={s.label}
-                >
-                  {s.icon}
+            <div className="hero-note note-stack" aria-hidden="true">
+              <span>Core stack</span><strong>React · Node · MongoDB</strong>
+            </div>
+          </div>
+        </div>
+
+        <div className="container hero-proof" aria-label="Portfolio highlights">
+          <div><strong>06+</strong><span>Products built</span></div>
+          <div><strong>02</strong><span>Industry internships</span></div>
+          <div><strong>8.12</strong><span>B.Tech CGPA</span></div>
+          <a href="#about">A little more about me <FiArrowDownRight aria-hidden="true" /></a>
+        </div>
+      </section>
+
+      <div className="stack-marquee" aria-label="Technology focus">
+        <div className="marquee-track">
+          {["React", "Node.js", "Product thinking", "MongoDB", "Clean interfaces", "REST APIs", "JavaScript", "Cloud delivery"].map((item) => (
+            <span key={item}>{item}<i aria-hidden="true">✦</i></span>
+          ))}
+          {["React", "Node.js", "Product thinking", "MongoDB", "Clean interfaces", "REST APIs", "JavaScript", "Cloud delivery"].map((item) => (
+            <span key={`${item}-copy`} aria-hidden="true">{item}<i>✦</i></span>
+          ))}
+        </div>
+      </div>
+
+      <section className="section projects-section" id="projects" aria-labelledby="projects-title">
+        <div className="container">
+          <SectionHeading
+            index="01"
+            eyebrow="Selected work"
+            headingId="projects-title"
+            title="Products built to solve real, practical problems."
+            description="A closer look at the decisions behind my strongest full-stack and frontend builds."
+          />
+
+          <div className="project-list">
+            {PROJECTS.map((project, index) => (
+              <article className={`project-case${index % 2 ? " is-reversed" : ""}`} key={project.name} data-reveal>
+                <div className="project-content">
+                  <div className="project-meta"><span>{project.number}</span><p>{project.category}</p></div>
+                  <h3>{project.name}</h3>
+                  <p className="project-description">{project.description}</p>
+                  <ul className="project-decisions">
+                    {project.decisions.map((decision) => <li key={decision}>{decision}</li>)}
+                  </ul>
+                  <div className="tag-list">
+                    {project.stack.map((item) => <span key={item}>{item}</span>)}
+                  </div>
+                  <div className="project-links">
+                    {project.live && <a href={project.live} target="_blank" rel="noreferrer">Live product <FiArrowUpRight aria-hidden="true" /></a>}
+                    <a href={project.code} target="_blank" rel="noreferrer"><FiGithub aria-hidden="true" /> Source code</a>
+                  </div>
+                </div>
+                <ProjectVisual type={project.visual} />
+              </article>
+            ))}
+          </div>
+
+          <div className="more-work" data-reveal>
+            <div className="more-work-heading">
+              <p>More builds</p>
+              <span>Smaller experiments, same attention to the details.</span>
+            </div>
+            <div className="more-project-grid">
+              {MORE_PROJECTS.map((project, index) => (
+                <a key={project.name} href={project.code} target="_blank" rel="noreferrer" className="mini-project">
+                  <div><span>0{index + 4}</span><FiArrowUpRight aria-hidden="true" /></div>
+                  <h3>{project.name}</h3>
+                  <p>{project.summary}</p>
+                  <small>{project.stack}</small>
                 </a>
               ))}
             </div>
           </div>
         </div>
-
-        <ScrollLink to="about" smooth duration={700} className="ngHome-scroll">
-          <span>Scroll</span>
-          <div className="ngHome-mouse"><div className="ngHome-wheel" /></div>
-        </ScrollLink>
       </section>
 
-      <section id="about"       className="ng-sec"><About /></section>
-      <section id="experience"  className="ng-sec"><Experience /></section>
-      <section id="education"   className="ng-sec"><Education /></section>
-      <section id="projects"    className="ng-sec"><Projects /></section>
-      <section id="skills"      className="ng-sec"><Skills /></section>
-      <section id="certificate" className="ng-sec"><Certificate /></section>
-      <section id="contact"     className="ng-sec"><Contact /></section>
-    </>
+      <section className="section experience-section" id="experience" aria-labelledby="experience-title">
+        <div className="container split-section">
+          <div className="split-intro" data-reveal>
+            <p className="section-index">02 / Experience</p>
+            <h2 id="experience-title">Learning by shipping, reviewing and improving.</h2>
+            <p>Two focused internships gave me hands-on experience with authentication, content quality, responsive UI and production workflows.</p>
+            <a href={RESUME_URL} target="_blank" rel="noreferrer">View full résumé <FiArrowUpRight aria-hidden="true" /></a>
+          </div>
+
+          <div className="timeline">
+            {EXPERIENCE.map((item) => (
+              <article className="timeline-item" key={item.company} data-reveal>
+                <div className="timeline-period">{item.period}</div>
+                <div className="timeline-content">
+                  <p>{item.company}</p>
+                  <h3>{item.role}</h3>
+                  <ul>{item.points.map((point) => <li key={point}>{point}</li>)}</ul>
+                  <a href={item.certificate} target="_blank" rel="noreferrer">View credential <FiArrowUpRight aria-hidden="true" /></a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section capabilities-section" id="skills" aria-labelledby="skills-title">
+        <div className="container">
+          <SectionHeading
+            index="03"
+            eyebrow="Capabilities"
+            headingId="skills-title"
+            title="A practical toolkit for moving ideas into production."
+            description="I care about the whole path—from a clear interface to the API and data behind it."
+          />
+          <div className="capability-grid">
+            {CAPABILITIES.map((capability) => (
+              <article className="capability-card" key={capability.title} data-reveal>
+                <span className="capability-number">{capability.number}</span>
+                <h3>{capability.title}</h3>
+                <p>{capability.description}</p>
+                <div className="tag-list">{capability.tools.map((tool) => <span key={tool}>{tool}</span>)}</div>
+              </article>
+            ))}
+          </div>
+          <div className="exploring-strip" data-reveal>
+            <span>Now exploring</span>
+            <p>Generative AI · AI-assisted product workflows · Prompt design</p>
+            <i aria-hidden="true">↗</i>
+          </div>
+        </div>
+      </section>
+
+      <section className="section about-section" id="about" aria-labelledby="about-title">
+        <div className="container about-grid">
+          <div className="about-heading" data-reveal>
+            <p className="section-index">04 / About</p>
+            <h2 id="about-title">Engineering with curiosity and product instinct.</h2>
+          </div>
+          <div className="about-copy" data-reveal>
+            <p className="about-lead">
+              I’m a computer science graduate who enjoys the space where thoughtful interfaces meet reliable engineering.
+            </p>
+            <p>
+              My strongest work starts with understanding the actual problem, then making the experience simpler—whether that means shaping a React interface, designing an API, modelling data or tracking down the detail that makes a feature feel complete.
+            </p>
+            <p>
+              I’m currently looking for a team where I can contribute, learn quickly and help turn useful ideas into software people can trust.
+            </p>
+            <div className="about-actions">
+              <a className="text-link" href={RESUME_URL} target="_blank" rel="noreferrer">Download résumé <FiArrowUpRight aria-hidden="true" /></a>
+              <a className="text-link" href="https://github.com/njg37" target="_blank" rel="noreferrer">Browse GitHub <FiArrowUpRight aria-hidden="true" /></a>
+            </div>
+          </div>
+          <div className="about-principles" data-reveal>
+            {["Clarity before complexity", "Build, test, refine", "Stay curious, stay useful"].map((principle, index) => (
+              <div key={principle}><span>0{index + 1}</span><p>{principle}</p></div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section credentials-section" id="education" aria-labelledby="credentials-title">
+        <div className="container">
+          <SectionHeading
+            index="05"
+            eyebrow="Foundation"
+            headingId="credentials-title"
+            title="Education and continued learning."
+            description="Formal computer science training, supported by focused credentials across frontend, architecture and cloud."
+          />
+
+          <div className="credentials-grid">
+            <div className="education-list" data-reveal>
+              <p className="subsection-label" id="education-title">Education</p>
+              {EDUCATION.map((item, index) => (
+                <article className={index === 0 ? "is-primary" : ""} key={item.title}>
+                  <span>{item.period}</span>
+                  <div><h3>{item.title}</h3><p>{item.institution}</p></div>
+                  <strong>{item.result}</strong>
+                </article>
+              ))}
+            </div>
+
+            <div className="certificate-list" id="certificates" data-reveal>
+              <p className="subsection-label">Selected credentials</p>
+              {CERTIFICATES.map((certificate) => {
+                const content = (
+                  <>
+                    <div className="certificate-thumb">
+                      {certificate.image ? <img src={certificate.image} alt="" /> : <span>NG</span>}
+                    </div>
+                    <div><small>{certificate.category}</small><h3>{certificate.title}</h3><p>{certificate.issuer}</p></div>
+                    {certificate.link ? <FiArrowUpRight aria-hidden="true" /> : <FiCheck aria-hidden="true" />}
+                  </>
+                );
+
+                return certificate.link ? (
+                  <a className="certificate-item" key={certificate.title} href={certificate.link} target="_blank" rel="noreferrer">{content}</a>
+                ) : (
+                  <article className="certificate-item" key={certificate.title}>{content}</article>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section contact-section" id="contact" aria-labelledby="contact-title">
+        <div className="container">
+          <div className="contact-heading" data-reveal>
+            <p className="section-index">06 / Contact</p>
+            <h2 id="contact-title">Have a role, a product idea or a hard problem?</h2>
+            <p>Let’s make the next useful thing together.</p>
+          </div>
+
+          <div className="contact-grid">
+            <ContactForm />
+            <aside className="contact-details" data-reveal>
+              <div className="contact-card location-card"><FiMapPin aria-hidden="true" /><div><span>Based in</span><strong>Gurugram, Haryana, India</strong></div></div>
+              <a className="contact-card" href="mailto:nabajitghosh225@gmail.com"><FiMail aria-hidden="true" /><div><span>Email</span><strong>nabajitghosh225@gmail.com</strong></div></a>
+              <a className="contact-card" href="tel:+918837337805"><FiPhone aria-hidden="true" /><div><span>Phone</span><strong>+91 88373 37805</strong></div></a>
+              <button className="copy-email" type="button" onClick={copyEmail}>
+                {copied ? <FiCheck aria-hidden="true" /> : <FiCopy aria-hidden="true" />}
+                {copied ? "Email copied" : "Copy email address"}
+              </button>
+              <div className="contact-socials">
+                {SOCIALS.slice(0, 2).map((social) => (
+                  <a key={social.label} href={social.href} target="_blank" rel="noreferrer">{social.label}<FiArrowUpRight aria-hidden="true" /></a>
+                ))}
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

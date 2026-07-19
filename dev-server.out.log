@@ -1,0 +1,400 @@
+
+> portfolio-website@0.1.0 start
+> react-scripts start
+
+Starting the development server...
+
+Compiled successfully!
+
+You can now view portfolio-website in the browser.
+
+  Local:            http://localhost:3000/nabajit-ghosh
+  On Your Network:  http://192.168.222.150:3000/nabajit-ghosh
+
+Note that the development build is not optimized.
+To create a production build, use npm run build.
+
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './components/Home' in 'D:\Internship\Work\Marknox\portfolio-website\src'
+[1m[31mERROR[39m[22m in [1m./src/App.js[39m[22m [1m[32m7:0-37[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './components/Home' in 'D:\Internship\Work\Marknox\portfolio-website\src'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './components/Footer' in 'D:\Internship\Work\Marknox\portfolio-website\src'
+[1m[31mERROR[39m[22m in [1m./src/App.js[39m[22m [1m[32m8:0-41[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './components/Footer' in 'D:\Internship\Work\Marknox\portfolio-website\src'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Error: Can't resolve './theme.css' in 'D:\Internship\Work\Marknox\portfolio-website\src'
+[1m[31mERROR[39m[22m in [1m./src/index.css[39m[22m (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./src/index.css)
+[1mModule build [1m[31mfailed[39m[22m[1m (from ./node_modules/css-loader/dist/cjs.js):
+[1m[31mError[39m[22m[1m: Can't resolve './theme.css' in 'D:\Internship\Work\Marknox\portfolio-website\src'
+    at finishWithoutResolve (D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\Resolver.js:564:18)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\Resolver.js:656:15
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\Resolver.js:718:5
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\Resolver.js:718:5
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\Resolver.js:718:5
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\Resolver.js:718:5
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\Resolver.js:718:5
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\RootsPlugin.js:38:38
+    at _next2 (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:8:1)
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:31:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
+    at _next1 (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:23:1)
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:46:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\ConditionalPlugin.js:40:47
+    at _next0 (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:38:1)
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:60:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\Resolver.js:718:5
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\DescriptionFilePlugin.js:89:43
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\Resolver.js:718:5
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\Resolver.js:718:5
+    at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node_modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+    at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-resolve\lib\DirectoryExistsPlugin.js:41:15
+    at process.processTicksAndRejections (node:internal/process/task_queues:89:21)[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './index.css' in 'D:\Internship\Work\Marknox\portfolio-website\src'
+[1m[31mERROR[39m[22m in [1m./src/index.js[39m[22m [1m[32m6:0-21[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './index.css' in 'D:\Internship\Work\Marknox\portfolio-website\src'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Module not found: Error: Can't resolve './App.css' in 'D:\Internship\Work\Marknox\portfolio-website\src'
+[1m[31mERROR[39m[22m in [1m./src/App.js[39m[22m [1m[32m5:0-19[39m[22m
+[1mModule [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve './App.css' in 'D:\Internship\Work\Marknox\portfolio-website\src'[39m[22m
+
+webpack compiled with [1m[31m1 error[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Failed to compile.
+
+Error: Child compilation failed:
+  Module not found: Error: Can't resolve 'D:\Internship\Work\Marknox\portfolio-w  ebsite\public\index.html' in 'D:\Internship\Work\Marknox\portfolio-website'
+  ModuleNotFoundError: Module not found: Error: Can't resolve 'D:\Internship\Wor  k\Marknox\portfolio-website\public\index.html' in 'D:\Internship\Work\Marknox\  portfolio-website'
+      at process.processTicksAndRejections (node:internal/process/task_queues:89  :21)
+  
+  - Compilation.js:2123 
+    [portfolio-website]/[webpack]/lib/Compilation.js:2123:28
+  
+  - NormalModuleFactory.js:923 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:923:13
+  
+  - NormalModuleFactory.js:339 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:339:22
+  
+  - NormalModuleFactory.js:520 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:520:22
+  
+  - NormalModuleFactory.js:155 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:155:10
+  
+  - NormalModuleFactory.js:783 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:783:25
+  
+  - NormalModuleFactory.js:1008 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:1008:8
+  
+  - NormalModuleFactory.js:1137 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:1137:5
+  
+  - async.js:6883 
+    [portfolio-website]/[neo-async]/async.js:6883:13
+  
+  - NormalModuleFactory.js:1120 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:1120:45
+  
+  - Resolver.js:567 finishWithoutResolve
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:567:11
+  
+  - Resolver.js:656 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:656:15
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  - DescriptionFilePlugin.js:89 
+    [portfolio-website]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:89:43
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  - DescriptionFilePlugin.js:89 
+    [portfolio-website]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:89:43
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  - DirectoryExistsPlugin.js:41 
+    [portfolio-website]/[enhanced-resolve]/lib/DirectoryExistsPlugin.js:41:15
+  
+  - task_queues:89 process.processTicksAndRejections
+    node:internal/process/task_queues:89:21
+  
+  - child-compiler.js:211 
+    [portfolio-website]/[html-webpack-plugin]/lib/child-compiler.js:211:18
+  
+  - Compiler.js:629 finalCallback
+    [portfolio-website]/[webpack]/lib/Compiler.js:629:5
+  
+  - Compiler.js:664 
+    [portfolio-website]/[webpack]/lib/Compiler.js:664:11
+  
+  - Compiler.js:1350 
+    [portfolio-website]/[webpack]/lib/Compiler.js:1350:17
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [portfolio-website]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1346 
+    [portfolio-website]/[webpack]/lib/Compiler.js:1346:33
+  
+  - Compilation.js:2938 finalCallback
+    [portfolio-website]/[webpack]/lib/Compilation.js:2938:11
+  
+  - Compilation.js:3251 
+    [portfolio-website]/[webpack]/lib/Compilation.js:3251:11
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [portfolio-website]/[tapable]/lib/Hook.js:18:14
+  
+  - Compilation.js:3244 
+    [portfolio-website]/[webpack]/lib/Compilation.js:3244:38
+  
+  - Compilation.js:540 
+    [portfolio-website]/[webpack]/lib/Compilation.js:540:10
+  
+  - SourceMapDevToolPlugin.js:599 
+    [portfolio-website]/[webpack]/lib/SourceMapDevToolPlugin.js:599:10
+  
+  - async.js:2830 
+    [portfolio-website]/[neo-async]/async.js:2830:7
+  
+  - async.js:2857 Object.each
+    [portfolio-website]/[neo-async]/async.js:2857:9
+[1m[31mERROR[39m[22m in [1m  [1m[31mError[39m[22m[1m: Child compilation [1m[31mfailed[39m[22m[1m:
+  Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'D:\Internship\Work\Marknox\portfolio-w  ebsite\public\index.html' in 'D:\Internship\Work\Marknox\portfolio-website'
+  ModuleNotFoundError: Module [1m[31mnot found[39m[22m[1m: [1m[31mError[39m[22m[1m: Can't resolve 'D:\Internship\Wor  k\Marknox\portfolio-website\public\index.html' in 'D:\Internship\Work\Marknox\  portfolio-website'
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\webpack\lib\C  ompilation.js:2123:28
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\webpack\lib\N  ormalModuleFactory.js:923:13
+      at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node  _modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:10:1)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\webpack\lib\N  ormalModuleFactory.js:339:22
+      at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node  _modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:9:1)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\webpack\lib\N  ormalModuleFactory.js:520:22
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\webpack\lib\N  ormalModuleFactory.js:155:10
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\webpack\lib\N  ormalModuleFactory.js:783:25
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\webpack\lib\N  ormalModuleFactory.js:1008:8
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\webpack\lib\N  ormalModuleFactory.js:1137:5
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\neo-async\asy  nc.js:6883:13
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\webpack\lib\N  ormalModuleFactory.js:1120:45
+      at finishWithoutResolve (D:\Internship\Work\Marknox\portfolio-website\node  _modules\enhanced-resolve\lib\Resolver.js:567:11)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\Resolver.js:656:15
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\Resolver.js:718:5
+      at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node  _modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\Resolver.js:718:5
+      at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node  _modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\DescriptionFilePlugin.js:89:43
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\Resolver.js:718:5
+      at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node  _modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\Resolver.js:718:5
+      at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node  _modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\Resolver.js:718:5
+      at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node  _modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\Resolver.js:718:5
+      at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node  _modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:27:1)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\DescriptionFilePlugin.js:89:43
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\Resolver.js:718:5
+      at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node  _modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:16:1)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\Resolver.js:718:5
+      at eval (eval at create (D:\Internship\Work\Marknox\portfolio-website\node  _modules\tapable\lib\HookCodeFactory.js:33:10), <anonymous>:15:1)
+      at D:\Internship\Work\Marknox\portfolio-website\node_modules\enhanced-reso  lve\lib\DirectoryExistsPlugin.js:41:15
+      at process.processTicksAndRejections (node:internal/process/task_queues:89  :21)
+  
+  - Compilation.js:2123 
+    [portfolio-website]/[webpack]/lib/Compilation.js:2123:28
+  
+  - NormalModuleFactory.js:923 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:923:13
+  
+  
+  - NormalModuleFactory.js:339 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:339:22
+  
+  
+  - NormalModuleFactory.js:520 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:520:22
+  
+  - NormalModuleFactory.js:155 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:155:10
+  
+  - NormalModuleFactory.js:783 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:783:25
+  
+  - NormalModuleFactory.js:1008 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:1008:8
+  
+  - NormalModuleFactory.js:1137 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:1137:5
+  
+  - async.js:6883 
+    [portfolio-website]/[neo-async]/async.js:6883:13
+  
+  - NormalModuleFactory.js:1120 
+    [portfolio-website]/[webpack]/lib/NormalModuleFactory.js:1120:45
+  
+  - Resolver.js:567 finishWithoutResolve
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:567:11
+  
+  - Resolver.js:656 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:656:15
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - DescriptionFilePlugin.js:89 
+    [portfolio-website]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:89:43
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - DescriptionFilePlugin.js:89 
+    [portfolio-website]/[enhanced-resolve]/lib/DescriptionFilePlugin.js:89:43
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - Resolver.js:718 
+    [portfolio-website]/[enhanced-resolve]/lib/Resolver.js:718:5
+  
+  
+  - DirectoryExistsPlugin.js:41 
+    [portfolio-website]/[enhanced-resolve]/lib/DirectoryExistsPlugin.js:41:15
+  
+  - task_queues:89 process.processTicksAndRejections
+    node:internal/process/task_queues:89:21
+  
+  - child-compiler.js:211 
+    [portfolio-website]/[html-webpack-plugin]/lib/child-compiler.js:211:18
+  
+  - Compiler.js:629 finalCallback
+    [portfolio-website]/[webpack]/lib/Compiler.js:629:5
+  
+  - Compiler.js:664 
+    [portfolio-website]/[webpack]/lib/Compiler.js:664:11
+  
+  - Compiler.js:1350 
+    [portfolio-website]/[webpack]/lib/Compiler.js:1350:17
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [portfolio-website]/[tapable]/lib/Hook.js:18:14
+  
+  - Compiler.js:1346 
+    [portfolio-website]/[webpack]/lib/Compiler.js:1346:33
+  
+  - Compilation.js:2938 finalCallback
+    [portfolio-website]/[webpack]/lib/Compilation.js:2938:11
+  
+  - Compilation.js:3251 
+    [portfolio-website]/[webpack]/lib/Compilation.js:3251:11
+  
+  
+  - Hook.js:18 Hook.CALL_ASYNC_DELEGATE [as _callAsync]
+    [portfolio-website]/[tapable]/lib/Hook.js:18:14
+  
+  - Compilation.js:3244 
+    [portfolio-website]/[webpack]/lib/Compilation.js:3244:38
+  
+  
+  - Compilation.js:540 
+    [portfolio-website]/[webpack]/lib/Compilation.js:540:10
+  
+  - SourceMapDevToolPlugin.js:599 
+    [portfolio-website]/[webpack]/lib/SourceMapDevToolPlugin.js:599:10
+  
+  - async.js:2830 
+    [portfolio-website]/[neo-async]/async.js:2830:7
+  
+  - async.js:2857 Object.each
+    [portfolio-website]/[neo-async]/async.js:2857:9
+  
+[39m[22m
+
+[1m[31m1 ERROR in child compilations (Use 'stats.children: true' resp. '--stats-children' for more details)[39m[22m
+webpack compiled with [1m[31m2 errors[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
+Compiling...
+Compiled successfully!
+webpack compiled [1m[32msuccessfully[39m[22m
